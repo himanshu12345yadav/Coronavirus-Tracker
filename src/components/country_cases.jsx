@@ -130,7 +130,7 @@ const Country_Cases = memo((props) => {
             >
                 <div data-aos="fade-up">
                     <h2 className="text-center p-5 heading">
-                        Check the destruction caused by covid-19 in your region
+                        Checkout Covid-19 Outbreak in your region
                     </h2>
                 </div>
                 <div className="container" id="floating_img_3">

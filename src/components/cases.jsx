@@ -113,7 +113,7 @@ const Cases = () => {
             >
                 <div data-aos="fade-up">
                     <h2 className="text-center p-3 heading">
-                        Destruction Spread by Covid-19 Worldwide
+                        Covid-19 Outbreak Worldwide
                     </h2>
                 </div>
                 <div className="container" id="floating_img_1">

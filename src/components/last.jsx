@@ -68,7 +68,7 @@ const Last = () => {
 
             <div data-aos="fade-up" id="precautions">
                 <h1 className="text-center heading" id="demo">
-                    How can I protect myself from Covid-19?{' '}
+                    How to protect yourself from the Coronavirus ?{' '}
                 </h1>
             </div>
             <div className="container-fluid bg-light my-5">
@@ -89,7 +89,8 @@ const Last = () => {
                             <div className="row precautions p-3 d-sm-flex justify-content-center justify-content-sm-between">
                                 <img
                                     src="https://cdn1.iconfinder.com/data/icons/coronavirus-information/128/__cough_tissue_close_mouth-512.png"
-                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5" alt="tissue_image"
+                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5"
+                                    alt="tissue_image"
                                 />
                                 <div className="col-sm-12 content col-lg-8 my-sm-3 col-12">
                                     <h5>
@@ -104,7 +105,8 @@ const Last = () => {
                             <div className="row precautions p-3 d-sm-flex justify-content-center justify-content-sm-between">
                                 <img
                                     src="https://i.pinimg.com/originals/6a/a5/4a/6aa54a0377f509d3123e4d8fd5229ce2.png"
-                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5" alt="handwash_image"
+                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5"
+                                    alt="handwash_image"
                                 />
                                 <div className="col-sm-12 content col-lg-8 my-sm-3 col-12">
                                     <h5>Wash Your Hand Frequently</h5>
@@ -133,7 +135,8 @@ const Last = () => {
                             <div className="row precautions p-3 d-sm-flex justify-content-center justify-content-sm-between">
                                 <img
                                     src="https://images.vexels.com/media/users/3/193244/isolated/preview/d22c35ff94c1c135c9da2bea24e8a0d7-covid-19-doctor-character-icon-by-vexels.png"
-                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5" alt="doctors_image"
+                                    className="img-fluid col-md-5 col-lg-3 my-sm-3 col-5"
+                                    alt="doctors_image"
                                 />
                                 <div className="col-sm-12 content col-lg-8 my-sm-3 col-12">
                                     <h5>Seek medical care </h5>
@@ -182,10 +185,24 @@ const Last = () => {
                         </h3>
                         <h1 className="display-3 text-center pt-5 text-danger">
                             1075{' '}
-                            <small className="text-muted noto-sans">
+                            <small>
+                                <sup>*</sup>
+                            </small>
+                            <small className="text-muted noto-sans mx-3">
                                 TOLL FREE
                             </small>
                         </h1>
+                        <h5 className="text-secondary text-center mt-5">
+                            * Refer official{' '}
+                            <a
+                                href="https://www.mohfw.gov.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                MoHfW
+                            </a>{' '}
+                            website for latest details.
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -209,12 +226,16 @@ const Last = () => {
                                 </a>
                                 <a
                                     className="list-group-item justify-content-around"
-                                    href="https://twitter.com/HRDMinistry"
+                                    href="https://www.mygov.in/covid-19"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <i className="fa fa-twitter text-primary fa-2x"></i>{' '}
-                                    MHRD_India
+                                    <img
+                                        src="https://www.mygov.in/sites/all/themes/mygov/front_assets/images/logo.png"
+                                        alt="mygov"
+                                        style={{ width: '80px' }}
+                                    />
+                                    MyGov
                                 </a>
                                 <a
                                     className="list-group-item justify-content-around"

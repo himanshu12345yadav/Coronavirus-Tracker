@@ -32,7 +32,7 @@ const Static = () => {
                     className="navbar-brand justify-content-md-center p-0"
                     style={{ transform: 'rotate(-5deg)' }}
                 >
-                    <a href="/index.html" className="nav-link p-0">
+                    <a href="/Coronavirus-Tracker" className="nav-link p-0">
                         <span
                             className="nav-text"
                             style={{
@@ -55,12 +55,19 @@ const Static = () => {
                 <div className="collapse navbar-collapse" id="nav">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item px-3">
-                            <a href="/" className="nav-link active">
+                            <a
+                                href="/Coronavirus-Tracker"
+                                className="nav-link active"
+                            >
                                 Home
                             </a>
                         </li>
-                        <li className="nav-item px-3">
-                            <a href="#world_data" className="nav-link">
+                        <li className="nav-item px-3" id="live-cases">
+                            <a
+                                href="#world_data"
+                                className="nav-link"
+                                style={{ color: '#dd3030' }}
+                            >
                                 Live Cases
                             </a>
                         </li>
