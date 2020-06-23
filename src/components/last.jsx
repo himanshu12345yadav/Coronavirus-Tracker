@@ -199,7 +199,7 @@ const Last = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                MoHfW
+                                MoHFW
                             </a>{' '}
                             website for latest details.
                         </h5>
