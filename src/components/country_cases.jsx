@@ -198,7 +198,7 @@ const Country_Cases = memo((props) => {
                                     className="country_count text-white"
                                     style={{ fontWeight: 'bold' }}
                                 >
-                                    {newCountryConfirmed}
+                                    {newCountryConfirmed.toLocaleString()}
                                 </h3>
                                 <h5
                                     className="title text-center"
@@ -226,7 +226,7 @@ const Country_Cases = memo((props) => {
                                     className="country_count text-white"
                                     style={{ fontWeight: 'bold' }}
                                 >
-                                    {totalCountryConfirmed}
+                                    {totalCountryConfirmed.toLocaleString()}
                                 </h3>
                                 <h5
                                     className="title text-center"
@@ -255,7 +255,7 @@ const Country_Cases = memo((props) => {
                                     className="country_count text-white"
                                     style={{ fontWeight: 'bold' }}
                                 >
-                                    {totalCountryRecovered}
+                                    {totalCountryRecovered.toLocaleString()}
                                 </h3>
                                 <h5
                                     className="title text-center"
@@ -283,7 +283,7 @@ const Country_Cases = memo((props) => {
                                     className="country_count text-white"
                                     style={{ fontWeight: 'bold' }}
                                 >
-                                    {countryDeaths}
+                                    {countryDeaths.toLocaleString()}
                                 </h3>
                                 <h5
                                     className="title text-center"

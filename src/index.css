@@ -11,11 +11,9 @@ h1 {
 }
 
 :root {
-    --theme-color: #2995dd;
-    --theme-color: var(--magenta-pantone);
+    --theme-color: #d14081;
     --violet: #ea7af4;
     --russian-violet: #320e3b;
-    --magenta-pantone: #d14081;
     --midnight-green-eagle-green: #1a535c;
     --tart-orange: #f0544f;
     --white: #f0ebeb;
@@ -70,6 +68,8 @@ h1 {
     height: 90%;
     left: 50%;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 2px;
     background-color: #bbbaba;
@@ -80,6 +80,7 @@ h1 {
 }
 .float-img img {
     width: 70px;
+    -webkit-animation: rotate 10.3s linear infinite;
     animation: rotate 10.3s linear infinite;
 }
 .about p {
@@ -93,6 +94,7 @@ h1 {
     z-index: -1;
     left: -6rem;
     width: 200px;
+    -webkit-animation: rotate 12s linear infinite;
     animation: rotate 12s linear infinite;
 }
 .jumbotron {
@@ -108,13 +110,22 @@ h1 {
 #live-cases a:before {
     content: '';
     position: absolute;
-    left: 5%;
+    left: 0%;
     top: 40%;
     background-color: #d63535;
     border-radius: 50%;
     height: 10px;
     width: 10px;
-    animation: flash .5s infinite alternate ease-in-out;
+    -webkit-animation: flash 0.5s infinite alternate ease-in-out;
+    animation: flash 0.5s infinite alternate ease-in-out;
+}
+@-webkit-keyframes flash {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 @keyframes flash {
     from {
@@ -143,20 +154,36 @@ h1 {
 #country_cases div div:nth-child(1) .jumbotron {
     height: 200px;
     background: url(./assets/brushed_alum.png),
+        -webkit-gradient(linear, left top, left bottom, from(#e22b59), to(#db5975));
+    background: url(./assets/brushed_alum.png),
+        -o-linear-gradient(top, #e22b59, #db5975);
+    background: url(./assets/brushed_alum.png),
         linear-gradient(to bottom, #e22b59, #db5975);
 }
 #country_cases div div:nth-child(2) .jumbotron {
     height: 200px;
+    background: url(./assets/brushed_alum.png),
+        -webkit-gradient(linear, left top, left bottom, from(#447acf), to(#1b4392));
+    background: url(./assets/brushed_alum.png),
+        -o-linear-gradient(top, #447acf, #1b4392);
     background: url(./assets/brushed_alum.png),
         linear-gradient(to bottom, #447acf, #1b4392);
 }
 #country_cases div div:nth-child(3) .jumbotron {
     height: 200px;
     background: url(./assets/brushed_alum.png),
+        -webkit-gradient(linear, left top, left bottom, from(#5a5858), to(#747272));
+    background: url(./assets/brushed_alum.png),
+        -o-linear-gradient(top, #5a5858, #747272);
+    background: url(./assets/brushed_alum.png),
         linear-gradient(to bottom, #5a5858, #747272);
 }
 #country_cases div div:nth-child(4) .jumbotron {
     height: 200px;
+    background: url(./assets/brushed_alum.png),
+        -webkit-gradient(linear, left top, left bottom, from(#7e3caa), to(#b15bd3));
+    background: url(./assets/brushed_alum.png),
+        -o-linear-gradient(top, #7e3caa, #b15bd3);
     background: url(./assets/brushed_alum.png),
         linear-gradient(to bottom, #7e3caa, #b15bd3);
 }
@@ -167,6 +194,7 @@ h1 {
     background-color: #f8f9fa;
     border-radius: 0.5rem;
     border: 4px solid var(--theme-color);
+    display: -ms-grid;
     display: grid;
     place-items: center;
     color: var(--theme-color);
@@ -181,10 +209,14 @@ h1 {
     background-color: transparent;
     z-index: -1;
     overflow: hidden;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 }
 #submit_btn:hover {
     color: var(--white);
+    -webkit-transition: color 0.3s ease-in;
+    -o-transition: color 0.3s ease-in;
     transition: color 0.3s ease-in;
 }
 #submit_btn span::after {
@@ -192,12 +224,16 @@ h1 {
     position: absolute;
     top: 50%;
     left: 70%;
+    -webkit-transform: skew(30deg) translate(-50%, -50%);
+    -ms-transform: skew(30deg) translate(-50%, -50%);
     transform: skew(30deg) translate(-50%, -50%);
     width: 30%;
     height: 200%;
     background-color: #f8f9fa;
     border: none;
     outline: none;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 }
 
@@ -205,6 +241,8 @@ h1 {
     background-color: var(--theme-color);
     outline: none;
     width: 200%;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 }
 #submit_btn:focus {
@@ -218,6 +256,8 @@ h1 {
     position: absolute;
     right: 0;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     background-color: #bbbaba;
     width: 2px;
@@ -239,21 +279,49 @@ h1 {
         z-index: -1;
     }
 }
+@media (max-width: 576px) {
+    #floating_img_1 {
+        left: 5px;
+        bottom: 5px;
+    }
+    #floating_img_2 {
+        right: 5px;
+        bottom: 5px;
+    }
+    #floating_img_4 {
+        right: 5px;
+        top: 5px;
+    }
+}
 #check_symptoms {
     border-radius: 2rem;
-    background-color: #f81f1f;
+    background-color: var(--theme-color);
     color: #f3efef;
     outline: none;
-    box-shadow: 2px 2px 2rem #fa9e9e;
+    -webkit-box-shadow: 2px 2px 2rem #f396c0;
+    box-shadow: 2px 2px 2rem #ee8db9;
+    -webkit-transition: color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+    transition: color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+    -o-transition: transform 0.2s ease-in, color 0.2s ease-in;
     transition: transform 0.2s ease-in, color 0.2s ease-in;
+    transition: transform 0.2s ease-in, color 0.2s ease-in,
+        -webkit-transform 0.2s ease-in;
 }
 #check_symptoms:hover {
     background-color: #eeecec;
-    color: #f81f1f;
+    color: var(--theme-color);
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
     transform: translateY(-5px);
+    -webkit-transition: color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+    transition: color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+    -o-transition: transform 0.2s ease-in, color 0.2s ease-in;
     transition: transform 0.2s ease-in, color 0.2s ease-in;
+    transition: transform 0.2s ease-in, color 0.2s ease-in,
+        -webkit-transform 0.2s ease-in;
 }
 .progress {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -261,30 +329,47 @@ h1 {
     border-radius: 0;
 }
 .progress-bar {
-    background-color: var(--magenta-pantone);
+    background-color: var(--theme-color);
 }
 .precautions img {
     border-radius: 1rem;
+    -webkit-box-shadow: -7px -7px 10px #ffffff, 3px 3px 10px #00000063;
     box-shadow: -7px -7px 10px #ffffff, 3px 3px 10px #00000063;
+    -o-object-fit: contain;
     object-fit: contain;
     padding: 0;
 }
 .precautions {
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     padding: 2rem;
     margin: 4rem 0;
     color: var(--russian-violet);
 }
 .precautions:hover {
+    -webkit-box-shadow: 5px -5px 20px #ffffff67, 2px 2px 10px #0000002a;
     box-shadow: 5px -5px 20px #ffffff67, 2px 2px 10px #0000002a;
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
     transform: translateY(-5px);
-    transition: transform 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .precautions h5 {
-    transition: color 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 .precautions:hover h5 {
     color: var(--theme-color);
+    -webkit-transition: color 0.2s ease-in;
+    -o-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in;
 }
 .content h5,
@@ -317,11 +402,11 @@ h1 {
     bottom: 0;
     width: 100%;
     height: 50%;
-    background-color: var(--magenta-pantone);
+    background-color: var(--theme-color);
 }
 .footer {
     min-height: 40vh;
-    background-color: var(--magenta-pantone);
+    background-color: var(--theme-color);
 }
 .noto-sans {
     font-family: 'Noto Sans', sans-serif;
@@ -335,19 +420,39 @@ h1 {
     background: transparent;
     color: var(--white);
     border: 0px;
+    -webkit-transition: color 0.2s ease-in;
+    -o-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .footer-main-content ul a:hover {
     color: var(--russian-violet);
+    -webkit-transition: color 0.2s ease-in;
+    -o-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in;
 }
-@keyframes rotate {
+@-webkit-keyframes rotate {
     from {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }

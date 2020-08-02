@@ -62,7 +62,7 @@ const Static = () => {
                                 Home
                             </a>
                         </li>
-                        <li className="nav-item px-3" id="live-cases">
+                        <li className="nav-item px-3 ml-2 m-sm-0" id="live-cases">
                             <a
                                 href="#world_data"
                                 className="nav-link"

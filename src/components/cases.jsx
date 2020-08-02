@@ -148,7 +148,7 @@ const Cases = () => {
                                 className="count_global"
                                 style={{ color: '#eb4559', fontWeight: 'bold' }}
                             >
-                                {newConfirmed}
+                                {newConfirmed.toLocaleString()}
                             </h3>
                             <h5
                                 className="title text-center"
@@ -175,7 +175,7 @@ const Cases = () => {
                                 className="count_global"
                                 style={{ color: '#eb4559', fontWeight: 'bold' }}
                             >
-                                {totalConfirmed}
+                                {totalConfirmed.toLocaleString()}
                             </h3>
                             <h5
                                 className="title text-center"
@@ -202,7 +202,7 @@ const Cases = () => {
                                 className="count_global"
                                 style={{ color: '#55c882', fontWeight: 'bold' }}
                             >
-                                {totalRecovered}
+                                {totalRecovered.toLocaleString()}
                             </h3>
                             <h5
                                 className="title text-center"
@@ -229,7 +229,7 @@ const Cases = () => {
                                 className="count_global"
                                 style={{ color: '#eb4559', fontWeight: 'bold' }}
                             >
-                                {deaths}
+                                {deaths.toLocaleString()}
                             </h3>
                             <h5
                                 className="title text-center"
