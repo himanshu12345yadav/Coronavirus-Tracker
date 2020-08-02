@@ -1,28 +1,34 @@
 {
   "files": {
-    "main.css": "/Coronavirus-Tracker/static/css/main.b8ef1b26.chunk.css",
-    "main.js": "/Coronavirus-Tracker/static/js/main.d049fdf9.chunk.js",
-    "main.js.map": "/Coronavirus-Tracker/static/js/main.d049fdf9.chunk.js.map",
+    "main.css": "/Coronavirus-Tracker/static/css/main.da31271e.chunk.css",
+    "main.js": "/Coronavirus-Tracker/static/js/main.04759d86.chunk.js",
+    "main.js.map": "/Coronavirus-Tracker/static/js/main.04759d86.chunk.js.map",
     "runtime-main.js": "/Coronavirus-Tracker/static/js/runtime-main.f607e659.js",
     "runtime-main.js.map": "/Coronavirus-Tracker/static/js/runtime-main.f607e659.js.map",
-    "static/js/2.4ed12d36.chunk.js": "/Coronavirus-Tracker/static/js/2.4ed12d36.chunk.js",
-    "static/js/2.4ed12d36.chunk.js.map": "/Coronavirus-Tracker/static/js/2.4ed12d36.chunk.js.map",
+    "static/js/2.8c764b14.chunk.js": "/Coronavirus-Tracker/static/js/2.8c764b14.chunk.js",
+    "static/js/2.8c764b14.chunk.js.map": "/Coronavirus-Tracker/static/js/2.8c764b14.chunk.js.map",
     "index.html": "/Coronavirus-Tracker/index.html",
-    "precache-manifest.8981dc83aa2c91d6136fd974cd2b9a90.js": "/Coronavirus-Tracker/precache-manifest.8981dc83aa2c91d6136fd974cd2b9a90.js",
+    "precache-manifest.30d00e566ea5717f4d59872b89e3dfef.js": "/Coronavirus-Tracker/precache-manifest.30d00e566ea5717f4d59872b89e3dfef.js",
     "service-worker.js": "/Coronavirus-Tracker/service-worker.js",
-    "static/css/main.b8ef1b26.chunk.css.map": "/Coronavirus-Tracker/static/css/main.b8ef1b26.chunk.css.map",
-    "static/js/2.4ed12d36.chunk.js.LICENSE.txt": "/Coronavirus-Tracker/static/js/2.4ed12d36.chunk.js.LICENSE.txt",
+    "static/css/main.da31271e.chunk.css.map": "/Coronavirus-Tracker/static/css/main.da31271e.chunk.css.map",
+    "static/js/2.8c764b14.chunk.js.LICENSE.txt": "/Coronavirus-Tracker/static/js/2.8c764b14.chunk.js.LICENSE.txt",
     "static/media/about_coronavirus.png": "/Coronavirus-Tracker/static/media/about_coronavirus.313fe18b.png",
     "static/media/index.css": "/Coronavirus-Tracker/static/media/brushed_alum.c6842476.png",
     "static/media/corona_guard.png": "/Coronavirus-Tracker/static/media/corona_guard.1b62e769.png",
     "static/media/coronavirus.png": "/Coronavirus-Tracker/static/media/coronavirus.7077f0d9.png",
     "static/media/coronavirus_white.png": "/Coronavirus-Tracker/static/media/coronavirus_white.bae30096.png",
-    "static/media/symptoms.png": "/Coronavirus-Tracker/static/media/symptoms.c5ecdc0c.png"
+    "static/media/doctor.png": "/Coronavirus-Tracker/static/media/doctor.5f577f37.png",
+    "static/media/face_mask.jpg": "/Coronavirus-Tracker/static/media/face_mask.4e8611bb.jpg",
+    "static/media/hand_sanitiser.png": "/Coronavirus-Tracker/static/media/hand_sanitiser.8b4659e2.png",
+    "static/media/social_distancing.png": "/Coronavirus-Tracker/static/media/social_distancing.20c42432.png",
+    "static/media/stay_home.png": "/Coronavirus-Tracker/static/media/stay_home.a8817369.png",
+    "static/media/symptoms.png": "/Coronavirus-Tracker/static/media/symptoms.c5ecdc0c.png",
+    "static/media/tissue_paper.png": "/Coronavirus-Tracker/static/media/tissue_paper.8b6de224.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f607e659.js",
-    "static/js/2.4ed12d36.chunk.js",
-    "static/css/main.b8ef1b26.chunk.css",
-    "static/js/main.d049fdf9.chunk.js"
+    "static/js/2.8c764b14.chunk.js",
+    "static/css/main.da31271e.chunk.css",
+    "static/js/main.04759d86.chunk.js"
   ]
 }
