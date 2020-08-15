@@ -4,7 +4,7 @@ import white_coronavirus from '../assets/coronavirus_white.png';
 import about_coronavirus from '../assets/about_coronavirus.png';
 
 const Static = () => {
-    const progress_bar = useRef('');
+    const progress_bar = useRef(null);
     useEffect(() => {
         window.addEventListener('scroll', () => {
             const progress =
@@ -12,11 +12,6 @@ const Static = () => {
                 (document.body.scrollHeight - window.screen.height);
             progress_bar.current.style.width = `${Math.ceil(100 * progress)}%`;
         });
-        return () => {
-            window.removeEventListener('scroll', () =>
-                console.log('scroll event removed successfully')
-            );
-        };
     }, []);
 
     return (
@@ -98,7 +93,7 @@ const Static = () => {
                             Covid-19 Alert
                         </span>
                         <div data-aos="fade-up" data-aos-offset="100">
-                            <h1 className="display-4 font-weight-bold main-heading heading py-5">
+                            <h1 className="display-4 font-weight-bold heading py-5">
                                 Let's Defeat
                                 <br />
                                 Covid-19 Togethor.
@@ -165,7 +160,7 @@ const Static = () => {
                                 What is novel Coronavirus ?
                             </h1>
                         </div>
-                        <div data-aos="fade-up-right">
+                        <div data-aos="fade-right">
                             <div
                                 className="container about"
                                 style={{ color: 'var(--russian-violet)' }}

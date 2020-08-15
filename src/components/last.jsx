@@ -28,15 +28,15 @@ const Last = () => {
                                 <div className="col-5">
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Hard cough
                                         </li>
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Fever
                                         </li>
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Headache
                                         </li>
                                     </ul>
@@ -44,15 +44,15 @@ const Last = () => {
                                 <div className="col-7">
                                     <ul className="list-group list-group-flush">
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Resoiratory Distress
                                         </li>
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Shortness of Breath
                                         </li>
                                         <li className="list-group-item">
-                                            <i className="fa fa-check-circle text-success"></i>
+                                            <i className="fa fa-check-circle text-success px-2"></i>
                                             Kidney Failure
                                         </li>
                                     </ul>
@@ -175,30 +175,30 @@ const Last = () => {
 
             <div className="container-fluid" id="needs_help">
                 <div data-aos="zoom-in" data-aos-duration="300">
-                    <div className="container jumbotron rounded-jumbotron my-0 pt-2">
-                        <h1 className="main-heading heading text-center title p-2 display-4">
+                    <div className="main-jumbotron jumbotron my-0 py-3">
+                        <h1 className="heading text-center title p-2 display-5">
                             Needs Help!
                         </h1>
                         <h4
-                            className="noto-sans text-center px-sm-5 px-1"
-                            style={{ lineHeight: '3rem' }}
+                            className="text-center text-muted px-sm-5 px-1"
+                            style={{ lineHeight: '2.5rem' }}
                         >
                             If you find symptoms of Covid -19, Don't hesitate
                             call right now
                         </h4>
-                        <h3 className="text-center pt-3 noto-sans">
+                        <h3 className="text-center pt-2 ">
                             All India Covid-19 Helpline Number
                         </h3>
-                        <h2 className="display-md-3 display-4 text-center pt-5 text-danger">
+                        <h1 className="display-md- text-center pt-3 text-danger">
                             1075{' '}
                             <small>
                                 <sup>*</sup>
                             </small>
-                            <small className="text-muted noto-sans mx-3">
+                            <small className="text-muted mx-3">
                                 TOLL FREE
                             </small>
-                        </h2>
-                        <h5 className="text-secondary text-center mt-5">
+                        </h1>
+                        <h5 className="text-secondary text-center m-3">
                             * Refer official{' '}
                             <a
                                 href="https://www.mohfw.gov.in/"
@@ -216,7 +216,7 @@ const Last = () => {
                 <div className="main-footer container-fluid">
                     <div className="row d-flex justify-content-around align-items-center">
                         <div className="col-7 col-sm-4 col-md-4 col-lg-3 footer-main-content order-2">
-                            <h3 className="noto-sans sub-heading text-center p-2">
+                            <h3 className=" sub-heading text-center p-2">
                                 Usefull Links
                             </h3>
                             <ul className="list-group list-group-flush">
@@ -278,11 +278,11 @@ const Last = () => {
                     style={{ border: '1px solid #f080b2' }}
                 ></div>
                 <div className="credits container-fluid d-flex py-4">
-                    <span className="pl-sm-5 pl-1 text-white noto-sans">
+                    <span className="pl-sm-5 pl-1 text-white ">
                         &copy; 2020 All right Reserved
                     </span>
-                    <span className="ml-auto pr-sm-5 pr-1 text-white noto-sans">
-                        Made by Himanshu Yadav
+                    <span className="ml-auto pr-sm-5 pr-1 text-white ">
+                        Made with ❤ by Himanshu Yadav
                     </span>
                 </div>
             </div>

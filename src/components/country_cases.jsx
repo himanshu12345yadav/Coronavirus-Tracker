@@ -89,7 +89,7 @@ const Country_Cases = memo((props) => {
                     country.current.classList.remove('is-invalid');
                     country.current.classList.add('is-valid');
                     $('.collapse').collapse('show');
-                    printCountryData(country_data, 1.1);
+                    printCountryData(country_data, 1.3);
                     setCountries([]);
                 }
             } catch (error) {
@@ -103,7 +103,7 @@ const Country_Cases = memo((props) => {
                     country.current.classList.add('is-invalid');
                     $('.collapse').collapse('hide');
                     document.querySelector('.invalid-feedback').innerText =
-                        'Something went wrong :) , please try again with a valid country name...';
+                        'Something went wrong 😕, please try again with a valid country name...';
                 }
             }
         });
