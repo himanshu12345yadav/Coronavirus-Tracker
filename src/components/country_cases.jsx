@@ -1,26 +1,9 @@
 import React, { useState, useRef, useEffect, memo } from 'react';
 import coronavirus_white from '../assets/coronavirus_white.png';
 import coronavirus_icon from '../assets/coronavirus_icon.png';
+import GraphTracker from './graph_tracker';
+import RenderRows from './render_rows';
 import $ from 'jquery';
-const RenderRows = (props) => {
-    const handler = (event) => {
-        props.country.current.value = event.target.innerText;
-        props.method([]);
-    };
-    return (
-        <>
-            {props.selectedCountry.map((country_name) => (
-                <li
-                    key={country_name.index}
-                    className="list-group-item list-group-item-action list-group-item-dark country_list_items"
-                    onClick={handler}
-                >
-                    {country_name.name}
-                </li>
-            ))}
-        </>
-    );
-};
 
 const Country_Cases = memo((props) => {
     const submit_btn = useRef('');
@@ -30,8 +13,11 @@ const Country_Cases = memo((props) => {
     var [totalCountryConfirmed, setTotalCountryConfirmed] = useState(0);
     var [totalCountryRecovered, setTotalCountryRecovered] = useState(0);
     var [countryDeaths, setCountryDeaths] = useState(0);
+    var [newCountryRecovered, setNewCountryRecovered] = useState(0);
+    var [newCountryDeaths, setNewCountryDeaths] = useState(0);
     var apiData = props.apiData;
     const country_names = props.countries;
+
     const printCountryData = (target, speed = 1.3) => {
         var counter = 1;
         const count = (callback, index) => {
@@ -43,7 +29,7 @@ const Country_Cases = memo((props) => {
                 callback(target[index]);
             }
         };
-        for (var index = 0; index < 4; index++) {
+        for (var index = 0; index < 6; index++) {
             switch (index) {
                 case 0:
                     count(setNewCountryConfirmed, index);
@@ -54,14 +40,29 @@ const Country_Cases = memo((props) => {
                 case 2:
                     count(setTotalCountryRecovered, index);
                     break;
-                default:
+                case 3:
                     count(setCountryDeaths, index);
+                    break;
+                case 4:
+                    count(setNewCountryRecovered, index);
+                    break;
+                default:
+                    count(setNewCountryDeaths, index);
                     break;
             }
         }
     };
 
     useEffect(() => {
+        if (!props.renderFlag) {
+            submit_btn.current.disabled = true;
+            country.current.classList.add('is-invalid');
+            document.querySelector('.invalid-feedback').innerText =
+                'Server is Experiencing high load, Please wait or Try again later 😕';
+        } else {
+            country.current.classList.remove('is-invalid');
+            submit_btn.current.disabled = false;
+        }
         submit_btn.current.addEventListener('click', (obj) => {
             obj.preventDefault();
             try {
@@ -71,27 +72,35 @@ const Country_Cases = memo((props) => {
                     );
                     error.name = 'Bad Response';
                     throw error;
+                } else if (country.current.value.length === 0) {
+                    let error = new Error('Country name cannot be empty');
+                    error.name = 'Empty Request';
+                    throw error;
+                } else if (
+                    !country_names.some(
+                        (item) => item.name === country.current.value
+                    )
+                ) {
+                    let error = new Error('No country with that name');
+                    error.name = 'Country Not Found';
+                    throw error;
                 }
                 var selectedCountry = apiData.Countries.filter(
                     (name) => name.Country === `${country.current.value}`
                 );
-                if (selectedCountry.length === 0) {
-                    let error = new Error('Entry Not Found');
-                    error.name = 'Bad Request';
-                    throw error;
-                } else {
-                    var country_data = [
-                        selectedCountry[0].NewConfirmed,
-                        selectedCountry[0].TotalConfirmed,
-                        selectedCountry[0].TotalRecovered,
-                        selectedCountry[0].TotalDeaths,
-                    ];
-                    country.current.classList.remove('is-invalid');
-                    country.current.classList.add('is-valid');
-                    $('.collapse').collapse('show');
-                    printCountryData(country_data, 1.3);
-                    setCountries([]);
-                }
+                var country_data = [
+                    selectedCountry[0].NewConfirmed,
+                    selectedCountry[0].TotalConfirmed,
+                    selectedCountry[0].TotalRecovered,
+                    selectedCountry[0].TotalDeaths,
+                    selectedCountry[0].NewRecovered,
+                    selectedCountry[0].NewDeaths,
+                ];
+                country.current.classList.remove('is-invalid');
+                country.current.classList.add('is-valid');
+                $('.collapse').collapse('show');
+                printCountryData(country_data, 1.3);
+                setCountries([]);
             } catch (error) {
                 if (error.name === 'Bad Response') {
                     country.current.classList.add('is-invalid');
@@ -99,11 +108,16 @@ const Country_Cases = memo((props) => {
                     document.querySelector(
                         '.invalid-feedback'
                     ).innerText = error;
-                } else if (error.name === 'Bad Request') {
+                } else if (error.name === 'Empty Request') {
                     country.current.classList.add('is-invalid');
                     $('.collapse').collapse('hide');
                     document.querySelector('.invalid-feedback').innerText =
-                        'Something went wrong 😕, please try again with a valid country name...';
+                        'Something went wrong 😕 , Country Name cannot be empty';
+                } else if (error.name === 'Country Not Found') {
+                    country.current.classList.add('is-invalid');
+                    $('.collapse').collapse('hide');
+                    document.querySelector('.invalid-feedback').innerText =
+                        'Something went wrong 😕 , There is no country with that name...';
                 }
             }
         });
@@ -112,7 +126,6 @@ const Country_Cases = memo((props) => {
             if (country.current.value === '') {
                 setCountries([]);
             } else {
-                // filtering the list
                 var entered_name = country.current.value;
                 const pattern = new RegExp(`^(${entered_name})`, 'i');
                 var filtered_country = country_names.filter((item) =>
@@ -121,7 +134,7 @@ const Country_Cases = memo((props) => {
                 setCountries(filtered_country);
             }
         };
-    }, [country.current.value, apiData, country_names, props.error]);
+    }, [country.current.value, apiData, country_names, props.error, props.renderFlag]);
     return (
         <>
             <div
@@ -161,6 +174,7 @@ const Country_Cases = memo((props) => {
                                     selectedCountry={countries}
                                     method={setCountries}
                                     country={country}
+                                    listGroupColor={'#f8f9fa'}
                                 />
                             </ul>
                             <div className="invalid-feedback"></div>
@@ -195,7 +209,7 @@ const Country_Cases = memo((props) => {
                                     />
                                 </span>
                                 <h3
-                                    className="country_count text-white"
+                                    className="country_count text-white pb-4"
                                     style={{ fontWeight: 'bold' }}
                                 >
                                     {newCountryConfirmed.toLocaleString()}
@@ -223,7 +237,7 @@ const Country_Cases = memo((props) => {
                                     />
                                 </span>
                                 <h3
-                                    className="country_count text-white"
+                                    className="country_count text-white pb-4"
                                     style={{ fontWeight: 'bold' }}
                                 >
                                     {totalCountryConfirmed.toLocaleString()}
@@ -257,11 +271,14 @@ const Country_Cases = memo((props) => {
                                 >
                                     {totalCountryRecovered.toLocaleString()}
                                 </h3>
+                                <h6 style={{ color: '#e8e8e8' }}>
+                                    +{newCountryRecovered.toLocaleString()}
+                                </h6>
                                 <h5
                                     className="title text-center"
                                     style={{ color: '#35124d' }}
                                 >
-                                    Total Recovered
+                                    Recovered
                                 </h5>
                             </div>
                         </div>
@@ -285,6 +302,9 @@ const Country_Cases = memo((props) => {
                                 >
                                     {countryDeaths.toLocaleString()}
                                 </h3>
+                                <h6 style={{ color: '#e8e8e8' }}>
+                                    +{newCountryDeaths.toLocaleString()}
+                                </h6>
                                 <h5
                                     className="title text-center"
                                     style={{ color: '#383737' }}
@@ -296,6 +316,8 @@ const Country_Cases = memo((props) => {
                     </div>
                 </div>
             </div>
+
+            <GraphTracker countries_names={country_names} />
         </>
     );
 });

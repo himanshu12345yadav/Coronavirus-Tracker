@@ -175,7 +175,7 @@ const Last = () => {
 
             <div className="container-fluid" id="needs_help">
                 <div data-aos="zoom-in" data-aos-duration="300">
-                    <div className="main-jumbotron jumbotron my-0 py-3">
+                    <div className="shadow main-jumbotron jumbotron my-0 py-3">
                         <h1 className="heading text-center title p-2 display-5">
                             Needs Help!
                         </h1>
@@ -194,9 +194,7 @@ const Last = () => {
                             <small>
                                 <sup>*</sup>
                             </small>
-                            <small className="text-muted mx-3">
-                                TOLL FREE
-                            </small>
+                            <small className="text-muted mx-3">TOLL FREE</small>
                         </h1>
                         <h5 className="text-secondary text-center m-3">
                             * Refer official{' '}
