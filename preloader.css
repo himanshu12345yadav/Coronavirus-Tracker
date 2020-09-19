@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --theme-color: #a0255d;
+  --bubble-duration: 0.7s;
+}
+.ellipses {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ellipse {
+  border-radius: 50%;
+  border-color: var(--theme-color);
+  border-width: 0px;
+  width: 0;
+  height: 0;
+  background-color: var(--theme-color);
+  border-style: solid;
+}
+.bubble-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#ellipse-1 {
+  animation: bubble var(--bubble-duration) infinite alternate ease-in-out;
+}
+#ellipse-2 {
+  animation: bubble var(--bubble-duration) 0.1s infinite alternate ease-in-out;
+}
+#ellipse-3 {
+  animation: bubble var(--bubble-duration) 0.2s infinite alternate ease-in-out;
+}
+#ellipse-4 {
+  animation: bubble var(--bubble-duration) 0.3s infinite alternate ease-in-out;
+}
+#ellipse-5 {
+  animation: bubble var(--bubble-duration) 0.4s infinite alternate ease-in-out;
+}
+@keyframes bubble {
+  from {
+    border-width: 0px;
+    opacity: 0;
+  }
+
+  to {
+    border-width: 15px;
+    opacity: 1;
+  }
+}
