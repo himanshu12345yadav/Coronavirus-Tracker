@@ -36,7 +36,7 @@ const Static = () => {
                                 color: 'var(--theme-color)',
                             }}
                         >
-                            Covid Tracker
+                            Covid-19 Tracker
                         </span>
                     </a>
                 </div>

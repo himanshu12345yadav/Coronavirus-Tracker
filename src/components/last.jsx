@@ -61,7 +61,7 @@ const Last = () => {
                         </div>
                     </div>
                     <div className="col-md-6 col-8 order-2 order-md-1 d-flex align-items-center">
-                        <div data-aos="fade-left">
+                        <div data-aos="fade-right">
                             <img
                                 src={symptoms}
                                 alt="symptoms_img"
@@ -272,10 +272,10 @@ const Last = () => {
                     </div>
                 </div>
                 <div
-                    className="dropdown-divider bg-secondary"
+                    className="dropdown-divider"
                     style={{ border: '1px solid #f080b2' }}
                 ></div>
-                <div className="credits container-fluid d-flex py-4">
+                <div className="credits container-fluid d-flex py-3">
                     <span className="pl-sm-5 pl-1 text-white ">
                         &copy; 2020 All right Reserved
                     </span>

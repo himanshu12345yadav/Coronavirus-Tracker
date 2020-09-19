@@ -40,10 +40,10 @@ const Cases = () => {
                         }
                     })
                     .then((data) => {
-                        setRenderFlag(true);
                         apiData = data;
                         globalData();
                         countries_data();
+                        setRenderFlag(true);
                     })
                     .catch((error) => {
                         console.log(error);
@@ -272,7 +272,7 @@ const Cases = () => {
                 </div>
             </div>
             <CountryCases
-                apiData={apiData}
+                api_data={apiData}
                 error={error_name}
                 countries={country_names}
                 renderFlag={renderFlag}

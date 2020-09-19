@@ -15,7 +15,7 @@ const Country_Cases = memo((props) => {
     var [countryDeaths, setCountryDeaths] = useState(0);
     var [newCountryRecovered, setNewCountryRecovered] = useState(0);
     var [newCountryDeaths, setNewCountryDeaths] = useState(0);
-    var apiData = props.apiData;
+    const apiData = props.api_data;
     const country_names = props.countries;
 
     const printCountryData = (target, speed = 1.3) => {
@@ -87,7 +87,7 @@ const Country_Cases = memo((props) => {
                 }
                 var selectedCountry = apiData.Countries.filter(
                     (name) => name.Country === `${country.current.value}`
-                );
+                    );
                 var country_data = [
                     selectedCountry[0].NewConfirmed,
                     selectedCountry[0].TotalConfirmed,
