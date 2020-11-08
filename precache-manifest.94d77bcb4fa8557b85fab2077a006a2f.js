@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a9eb08d24e2e8217107b3870354f2ae",
+    "revision": "92d08d834c56bd21a96a029e8c4b528b",
     "url": "/Coronavirus-Tracker/index.html"
   },
   {
-    "revision": "f0f60acaf659815d4009",
-    "url": "/Coronavirus-Tracker/static/css/main.ecac89ac.chunk.css"
+    "revision": "e6e9c45aa740e796081e",
+    "url": "/Coronavirus-Tracker/static/css/main.c51d6121.chunk.css"
   },
   {
     "revision": "b1614cd2e9fa7e78f186",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Coronavirus-Tracker/static/js/2.8aa1e118.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f0f60acaf659815d4009",
-    "url": "/Coronavirus-Tracker/static/js/main.6b69fce6.chunk.js"
+    "revision": "e6e9c45aa740e796081e",
+    "url": "/Coronavirus-Tracker/static/js/main.b646bb52.chunk.js"
   },
   {
     "revision": "1cacaca90a7a8d81f6c2",
@@ -58,9 +58,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "45d644904f491172345254f0a4c884bf",
     "url": "/Coronavirus-Tracker/static/media/symptoms.45d64490.png"
-  },
-  {
-    "revision": "8b6de224f49cd146a467170e96b3dae0",
-    "url": "/Coronavirus-Tracker/static/media/tissue_paper.8b6de224.png"
   }
 ]);
