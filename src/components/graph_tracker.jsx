@@ -34,6 +34,7 @@ const GraphTracker = (props) => {
       add_country_btn.current.disabled = false;
       weeks_count.current.disabled = false;
     }
+    // eslint-disable-next-line
   }, [renderFlag, country_names]);
 
   const add_country_btn = useRef("");
@@ -326,7 +327,7 @@ const GraphTracker = (props) => {
       <div className="container">
         <form className="form-group needs-validation pb-5">
           <div className="form-row d-flex justify-content-center align-items-center">
-            <div className="col-sm-8 col-md-7 col-lg-5">
+            <div className="col-sm-8 col-md-7 col-lg-5 my-3 my-sm-0">
               <input
                 type="text"
                 name="country"
@@ -353,7 +354,7 @@ const GraphTracker = (props) => {
             <button
               type="submit"
               value="Add"
-              className="btn btn-info align-self-start btn col-2 mx-2  col-md-2 col-lg-1"
+              className="btn btn-info align-self-start btn col-2 mx-2 col-md-2 col-lg-1"
               ref={add_country_btn}
               onClick={(event) => add_country_handler(event)}
             >
@@ -362,7 +363,7 @@ const GraphTracker = (props) => {
             <select
               name="no_of_weeks"
               ref={weeks_count}
-              className="weeks_select form-control text-nowrap align-self-start col-3 mx-2 col-md-3 col-lg-1"
+              className="weeks_select form-control text-nowrap align-self-start col-2 mx-2 col-md-3 col-lg-1"
               onChange={(event) => weeks_change_handler(event)}
               defaultValue="8"
             >

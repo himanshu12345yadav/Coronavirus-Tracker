@@ -182,7 +182,7 @@ const Country_Cases = memo((props) => {
                         <button
                             type="submit"
                             value="Check"
-                            className="align-self-start btn col-2 mt-3 mt-sm-0 my-md-0 col-md-2 col-lg-1"
+                            className="align-self-start btn mx-2 col-2 mt-3 mt-sm-0 my-md-0 col-md-2 col-lg-1"
                             ref={submit_btn}
                             id="submit_btn"
                         >

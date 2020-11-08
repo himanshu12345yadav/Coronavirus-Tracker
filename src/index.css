@@ -72,7 +72,6 @@ html {
   width: 2px;
   background-color: #bbbaba;
 }
-
 .about p {
   line-height: 2.5rem;
   font-size: 1.1rem;
@@ -94,7 +93,8 @@ html {
   content: "";
   position: absolute;
   left: 0%;
-  top: 40%;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #d63535;
   border-radius: 50%;
   height: 10px;
@@ -132,7 +132,6 @@ html {
   background-color: #e8ebeb !important;
   cursor: pointer;
 }
-
 #country_cases div div:nth-child(1) .jumbotron {
   height: 200px;
   background: url(./assets/brushed_alum.png),
@@ -185,9 +184,11 @@ html {
   border-radius: 0.4rem;
   border: none;
   position: absolute;
-  width: 110%;
+  top: -20%;
+  left: -12%;
+  width: 120%;
   outline: none;
-  height: 130%;
+  height: 140%;
   background-color: transparent;
   z-index: -1;
   overflow: hidden;
@@ -256,7 +257,6 @@ select:disabled {
   border-color: #17a2b8;
   color: #17a2b8;
 }
-
 .weeks_select:hover{
     cursor: pointer;
 }
@@ -308,6 +308,10 @@ select:disabled {
   #floating_img_4 {
     right: 5px;
     top: 5px;
+  }
+  #live-cases a:before {
+    height: 8px;
+    width: 8px;
   }
 }
 @media (max-width: 350px) {
