@@ -6,6 +6,7 @@ const GraphTracker = (props) => {
     var [countries, setCountries] = useState([]);
     const country = useRef('');
     var [renderFlag, setRenderFlag] = useState(false);
+    window.content_data = useRef([]);
     useEffect(() => {
         country.current.onkeyup = () => {
             if (country.current.value === '') {
@@ -22,7 +23,6 @@ const GraphTracker = (props) => {
         window.weeks_shown = 8;
         window.content_type = 'dailyNewCases';
         window.slice_count = 0;
-        window.content_data = [];
         window.ctx = document.getElementById('trackerChart').getContext('2d');
         if (!renderFlag) {
             renderGraph();
@@ -110,7 +110,7 @@ const GraphTracker = (props) => {
     const weeks_change_handler = (event) => {
         window.selected_weeks = parseInt(event.target.value);
         window.slice_count = (MAX_SUPPORTED_WEEKS - window.selected_weeks) * 7;
-        let content_deep_clone = Object.assign({}, window.content_data);
+        let content_deep_clone = Object.assign({}, window.content_data.current);
 
         window.lineChart.data.labels = window.complete_requested_labels.slice(
             window.slice_count
@@ -136,7 +136,7 @@ const GraphTracker = (props) => {
             window.lineChart.options.scales.yAxes[0].scaleLabel.labelString =
                 'Active Cases';
         }
-        let deepClone = Object.assign({}, window.content_data);
+        let deepClone = Object.assign({}, window.content_data.current);
         window.lineChart.data.datasets.forEach((dataset, index) => {
             dataset.data = deepClone[index].datas[window.content_type].slice(
                 window.slice_count
@@ -197,7 +197,7 @@ const GraphTracker = (props) => {
                 dailyActiveCases.shift();
                 dailyDeathCases.shift();
                 dateData.shift();
-                window.content_data.push({
+                window.content_data.current.push({
                     country_name: country,
                     datas: {
                         dailyNewCases: dailyNewCases,
@@ -206,7 +206,7 @@ const GraphTracker = (props) => {
                     },
                 });
                 resolve([
-                    window.content_data[window.content_data.length - 1].datas,
+                    window.content_data.current[window.content_data.current.length - 1].datas,
                     dateData,
                 ]);
             } catch (error) {
