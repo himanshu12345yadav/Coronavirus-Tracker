@@ -57,6 +57,7 @@ const Cases = () => {
                         index: index,
                         name: item.Country,
                         CountryCode: item.CountryCode,
+                        status : "country-inactive"
                     });
                 });
             } catch (error) {

@@ -121,6 +121,19 @@ html {
 #country_list {
   max-height: 300px;
   overflow: auto;
+  position: relative;
+  transition: height .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.country-active{
+  position: absolute;
+  opacity: 1;
+  transition: opacity .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) , transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.country-inactive{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) , transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 #country_wise_cases {
   position: relative;
@@ -310,8 +323,8 @@ select:disabled {
     top: 5px;
   }
   #live-cases a:before {
-    height: 8px;
-    width: 8px;
+    height: 7px;
+    width: 7px;
   }
 }
 @media (max-width: 350px) {

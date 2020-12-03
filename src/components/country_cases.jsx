@@ -8,6 +8,7 @@ import $ from 'jquery';
 const Country_Cases = memo((props) => {
     const submit_btn = useRef('');
     const country = useRef('');
+    const wrapperRef = useRef('');
     var [countries, setCountries] = useState([]);
     var [newCountryConfirmed, setNewCountryConfirmed] = useState(0);
     var [totalCountryConfirmed, setTotalCountryConfirmed] = useState(0);
@@ -87,7 +88,7 @@ const Country_Cases = memo((props) => {
                 }
                 var selectedCountry = apiData.Countries.filter(
                     (name) => name.Country === `${country.current.value}`
-                    );
+                );
                 var country_data = [
                     selectedCountry[0].NewConfirmed,
                     selectedCountry[0].TotalConfirmed,
@@ -124,17 +125,25 @@ const Country_Cases = memo((props) => {
         country.current.onkeyup = () => {
             $('.collapse').collapse('hide');
             if (country.current.value === '') {
+                wrapperRef.current.style.height = "0px";
                 setCountries([]);
             } else {
                 var entered_name = country.current.value;
                 const pattern = new RegExp(`^(${entered_name})`, 'i');
-                var filtered_country = country_names.filter((item) =>
-                    pattern.test(item.name)
+
+                var filtered_country = country_names.map((item) =>
+                    pattern.test(item.name) ? {...item, status : "country-active"} : {...item , status : "country-inactive"}
                 );
                 setCountries(filtered_country);
             }
         };
-    }, [country.current.value, apiData, country_names, props.error, props.renderFlag]);
+    }, [
+        country.current.value,
+        apiData,
+        country_names,
+        props.error,
+        props.renderFlag,
+    ]);
     return (
         <>
             <div
@@ -169,12 +178,14 @@ const Country_Cases = memo((props) => {
                             <ul
                                 className="list-group list-group-flush mt-1"
                                 id="country_list"
+                                ref={wrapperRef}
                             >
                                 <RenderRows
                                     selectedCountry={countries}
                                     method={setCountries}
                                     country={country}
                                     listGroupColor={'#f8f9fa'}
+                                    parent={wrapperRef.current}
                                 />
                             </ul>
                             <div className="invalid-feedback"></div>

@@ -5,17 +5,19 @@ const GraphTracker = (props) => {
     const country_names = props.countries_names;
     var [countries, setCountries] = useState([]);
     const country = useRef('');
+    const wrapperRefGraph = useRef('');
     var [renderFlag, setRenderFlag] = useState(false);
     window.content_data = useRef([]);
     useEffect(() => {
         country.current.onkeyup = () => {
             if (country.current.value === '') {
+                wrapperRefGraph.current.style.height = "0px";
                 setCountries([]);
             } else {
                 var entered_name = country.current.value;
                 const pattern = new RegExp(`^(${entered_name})`, 'i');
-                var filtered_country = country_names.filter((item) =>
-                    pattern.test(item.name)
+                var filtered_country = country_names.map((item) =>
+                    pattern.test(item.name) ? {...item, status : "country-active"} : {...item , status : "country-inactive"}
                 );
                 setCountries(filtered_country);
             }
@@ -402,12 +404,14 @@ const GraphTracker = (props) => {
                             <ul
                                 className="list-group list-group-flush mt-1"
                                 id="country_list"
+                                ref={wrapperRefGraph}
                             >
                                 <RenderRows
                                     selectedCountry={countries}
                                     method={setCountries}
                                     country={country}
                                     listGroupColor={'white'}
+                                    parent={wrapperRefGraph.current}
                                 />
                             </ul>
                             <div className="graph-feedback invalid-feedback"></div>
